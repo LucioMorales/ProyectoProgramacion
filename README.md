@@ -1,3 +1,2 @@
-# ProyectoProgramacion
-# Morales, Lucio
-# Urquiza, Maximo
+# ProyectoProgramacion - Morales - Urquiza
+
