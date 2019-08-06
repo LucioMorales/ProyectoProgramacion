@@ -1,52 +1,52 @@
 package proyectoprogramacion;
 
 public class Huesped {
-    protected int NOMBRE;
-    protected int DNI;
-    protected int EDAD;
-    protected String EMAIL;
+    protected int nombre;
+    protected int dni;
+    protected int edad;
+    protected String email;
 
-    public Huesped(int NOMBRE, int DNI, int EDAD, String EMAIL) {
-        this.NOMBRE = NOMBRE;
-        this.DNI = DNI;
-        this.EDAD = EDAD;
-        this.EMAIL = EMAIL;
+    public Huesped(int nombre, int dni, int edad, String email) {
+        this.nombre = nombre;
+        this.dni = dni;
+        this.edad = edad;
+        this.email = email;
     }
 
-    public int getNOMBRE() {
-        return NOMBRE;
+    public int getNombre() {
+        return nombre;
     }
 
-    public void setNOMBRE(int NOMBRE) {
-        this.NOMBRE = NOMBRE;
+    public void setNombre(int nombre) {
+        this.nombre = nombre;
     }
 
-    public int getDNI() {
-        return DNI;
+    public int getDni() {
+        return dni;
     }
 
-    public void setDNI(int DNI) {
-        this.DNI = DNI;
+    public void setDni(int dni) {
+        this.dni = dni;
     }
 
-    public int getEDAD() {
-        return EDAD;
+    public int getEdad() {
+        return edad;
     }
 
-    public void setEDAD(int EDAD) {
-        this.EDAD = EDAD;
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 
-    public String getEMAIL() {
-        return EMAIL;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEMAIL(String EMAIL) {
-        this.EMAIL = EMAIL;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
     public String toString() {
-        return "Nombre: " + NOMBRE + ", DNI: " + DNI + ", Edad: " + EDAD + ", Email: " + EMAIL;
+        return "Nombre: " + nombre + ", DNI: " + dni + ", Edad: " + edad + ", Email: " + email;
     }
 }

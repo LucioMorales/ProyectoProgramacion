@@ -1,42 +1,42 @@
 package proyectoprogramacion;
 
 public class Reserva {
-    protected int NOMBRE;
-    protected int NUMERO;
-    protected String TIEMPO;
+    protected int nombre;
+    protected int numero;
+    protected String tiempo;
 
-    public Reserva(int NOMBRE, int NUMERO, String TIEMPO) {
-        this.NOMBRE = NOMBRE;
-        this.NUMERO = NUMERO;
-        this.TIEMPO = TIEMPO;
+    public Reserva(int nombre, int numero, String tiempo) {
+        this.nombre = nombre;
+        this.numero = numero;
+        this.tiempo = tiempo;
     }
 
-    public int getNOMBRE() {
-        return NOMBRE;
+    public int getNombre() {
+        return nombre;
     }
 
-    public void setNOMBRE(int NOMBRE) {
-        this.NOMBRE = NOMBRE;
+    public void setNombre(int nombre) {
+        this.nombre = nombre;
     }
 
-    public int getNUMERO() {
-        return NUMERO;
+    public int getNumero() {
+        return numero;
     }
 
-    public void setNUMERO(int NUMERO) {
-        this.NUMERO = NUMERO;
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
-    public String getTIEMPO() {
-        return TIEMPO;
+    public String getTiempo() {
+        return tiempo;
     }
 
-    public void setTIEMPO(String TIEMPO) {
-        this.TIEMPO = TIEMPO;
+    public void setTiempo(String tiempo) {
+        this.tiempo = tiempo;
     }
 
     @Override
     public String toString() {
-        return "Reserva: " + " Nombre: " + NOMBRE + ", Numero: " + NUMERO + ", Tiempo: " + TIEMPO;
+        return "Reserva: " + "Nombre: " + nombre + ", Numero: " + numero + ", Tiempo: " + tiempo;
     }
 }

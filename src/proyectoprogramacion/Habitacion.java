@@ -1,53 +1,55 @@
 package proyectoprogramacion;
 
 public class Habitacion {
-    protected int NUMERO;
-    protected int PISO;
-    protected int PREXNOC;
-    protected int CANTPERS;
+    protected int numero;
+    protected int piso;
+    protected int prexnoc;
+    protected int cantpers;
 
-    public Habitacion(int NUMERO, int PISO, int PREXNOC, int CANTPERS) {
-        this.NUMERO = NUMERO;
-        this.PISO = PISO;
-        this.PREXNOC = PREXNOC;
-        this.CANTPERS = CANTPERS;
+    public Habitacion(int numero, int piso, int prexnoc, int cantpers) {
+        this.numero = numero;
+        this.piso = piso;
+        this.prexnoc = prexnoc;
+        this.cantpers = cantpers;
     }
 
-    public int getNUMERO() {
-        return NUMERO;
+    public int getNumero() {
+        return numero;
     }
 
-    public void setNUMERO(int NUMERO) {
-        this.NUMERO = NUMERO;
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
-    public int getPISO() {
-        return PISO;
+    public int getPiso() {
+        return piso;
     }
 
-    public void setPISO(int PISO) {
-        this.PISO = PISO;
+    public void setPiso(int piso) {
+        this.piso = piso;
     }
 
-    public int getPREXNOC() {
-        return PREXNOC;
+    public int getPrexnoc() {
+        return prexnoc;
     }
 
-    public void setPREXNOC(int PREXNOC) {
-        this.PREXNOC = PREXNOC;
+    public void setPrexnoc(int prexnoc) {
+        this.prexnoc = prexnoc;
     }
 
-    public int getCANTPERS() {
-        return CANTPERS;
+    public int getCantpers() {
+        return cantpers;
     }
 
-    public void setCANTPERS(int CANTPERS) {
-        this.CANTPERS = CANTPERS;
+    public void setCantpers(int cantpers) {
+        this.cantpers = cantpers;
     }
 
     @Override
     public String toString() {
-        return "Habitacion{" + "NUMERO=" + NUMERO + ", PISO=" + PISO + ", PREXNOC=" + PREXNOC + ", CANTPERS=" + CANTPERS + '}';
+        return "Habitacion: " + " Numero:" + numero + ", Piso: " + piso + ", Precio por noche: " + prexnoc + ", Cantidad de Personas: " + cantpers;
     }
+
+    
     
 }
