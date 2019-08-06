@@ -1,5 +1,5 @@
 package proyectoprogramacion;
 
-public class Huesped {
+public class Habitacion {
     
 }
