@@ -15,6 +15,7 @@ public class InterfazRegistroH extends javax.swing.JFrame {
      * Creates new form InterfazRegistroH
      */
     public InterfazRegistroH() {
+        this.setVisible(true);
         initComponents();
     }
 
@@ -27,6 +28,8 @@ public class InterfazRegistroH extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         tfPiso = new javax.swing.JTextField();
         btnNext = new javax.swing.JButton();
         tfnumero = new javax.swing.JTextField();
@@ -39,8 +42,12 @@ public class InterfazRegistroH extends javax.swing.JFrame {
         tfCantPers = new javax.swing.JTextField();
         lblTitulo = new javax.swing.JLabel();
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(671, 253));
+        setPreferredSize(new java.awt.Dimension(671, 310));
 
         btnNext.setText("Continuar");
         btnNext.addActionListener(new java.awt.event.ActionListener() {
@@ -172,10 +179,12 @@ public class InterfazRegistroH extends javax.swing.JFrame {
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnNext;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblCantPers;
     private javax.swing.JLabel lblNumero;
     private javax.swing.JLabel lblPiso;
