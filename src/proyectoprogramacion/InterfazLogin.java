@@ -15,6 +15,7 @@ public class InterfazLogin extends javax.swing.JFrame {
      * Creates new form InterfazLogin
      */
     public InterfazLogin() {
+        this.setVisible(true);
         initComponents();
     }
 
@@ -125,6 +126,8 @@ public class InterfazLogin extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        InterfazLogin.this.setVisible(false);
+        InterfazRegistro r = new InterfazRegistro();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

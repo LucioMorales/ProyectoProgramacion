@@ -143,6 +143,8 @@ public class InterfazRegistroH extends javax.swing.JFrame {
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         // TODO add your handling code here:
+        InterfazRegistroH.this.setVisible(false);
+        InterfazMenu m = new InterfazMenu();
     }//GEN-LAST:event_btnCancelActionPerformed
 
     /**

@@ -3,6 +3,8 @@ package proyectoprogramacion;
 public class InterfazRegistro extends javax.swing.JFrame {
 
     public InterfazRegistro() {
+        this.setVisible(true);
+        this.setResizable(false);
         initComponents();
     }
 
@@ -50,7 +52,7 @@ public class InterfazRegistro extends javax.swing.JFrame {
             }
         });
 
-        btnCancel.setText("Cancelar");
+        btnCancel.setText("Volver");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelActionPerformed(evt);
@@ -120,6 +122,8 @@ public class InterfazRegistro extends javax.swing.JFrame {
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         // TODO add your handling code here:
+        InterfazRegistro.this.setVisible(false);
+        InterfazLogin l = new InterfazLogin();
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
