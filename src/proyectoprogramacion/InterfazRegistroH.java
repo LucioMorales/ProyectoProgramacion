@@ -16,6 +16,7 @@ public class InterfazRegistroH extends javax.swing.JFrame {
      */
     public InterfazRegistroH() {
         this.setVisible(true);
+        this.setResizable(false);
         initComponents();
     }
 
@@ -139,6 +140,8 @@ public class InterfazRegistroH extends javax.swing.JFrame {
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         // TODO add your handling code here:
+        InterfazRegistroH.this.setVisible(false);
+        InterfazReserva r = new InterfazReserva();
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
