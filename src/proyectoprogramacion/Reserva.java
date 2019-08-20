@@ -1,29 +1,29 @@
 package proyectoprogramacion;
 
 public class Reserva {
-    protected int nombre;
-    protected int numero;
+    protected Huesped dni;
+    protected Habitacion numero;
     protected String tiempo;
 
-    public Reserva(int nombre, int numero, String tiempo) {
-        this.nombre = nombre;
+    public Reserva(Huesped dni, Habitacion numero, String tiempo) {
+        this.dni = dni;
         this.numero = numero;
         this.tiempo = tiempo;
     }
 
-    public int getNombre() {
-        return nombre;
+    public Huesped getDni() {
+        return dni;
     }
 
-    public void setNombre(int nombre) {
-        this.nombre = nombre;
+    public void setDni(Huesped dni) {
+        this.dni = dni;
     }
 
-    public int getNumero() {
+    public Habitacion getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(Habitacion numero) {
         this.numero = numero;
     }
 
@@ -37,6 +37,6 @@ public class Reserva {
 
     @Override
     public String toString() {
-        return "Reserva: " + "Nombre: " + nombre + ", Numero: " + numero + ", Tiempo: " + tiempo;
+        return "Reserva: " + "DNI: " + dni + ", Numero de habitacion: " + numero + ", Tiempo: " + tiempo;
     }
 }
