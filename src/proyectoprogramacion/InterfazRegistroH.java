@@ -48,7 +48,6 @@ public class InterfazRegistroH extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(671, 310));
 
         btnNext.setText("Continuar");
         btnNext.addActionListener(new java.awt.event.ActionListener() {
@@ -57,7 +56,7 @@ public class InterfazRegistroH extends javax.swing.JFrame {
             }
         });
 
-        btnCancel.setText("Cancelar");
+        btnCancel.setText("Volver");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelActionPerformed(evt);
@@ -147,7 +146,7 @@ public class InterfazRegistroH extends javax.swing.JFrame {
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         // TODO add your handling code here:
         InterfazRegistroH.this.setVisible(false);
-        InterfazMenu m = new InterfazMenu();
+        InterfazRegistro r = new InterfazRegistro();
     }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
