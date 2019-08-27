@@ -1,19 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyectoprogramacion;
 
-/**
- *
- * @author Maximo
- */
 public class InterfazLogin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form InterfazLogin
-     */
     public InterfazLogin() {
         this.setVisible(true);
         initComponents();
@@ -30,7 +18,7 @@ public class InterfazLogin extends javax.swing.JFrame {
 
         btnAceptar = new javax.swing.JButton();
         tfPasswd = new javax.swing.JTextField();
-        lblUser = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
         lblPasswd = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
         btnRegistrarse = new javax.swing.JButton();
@@ -45,7 +33,7 @@ public class InterfazLogin extends javax.swing.JFrame {
             }
         });
 
-        lblUser.setText("Usuario:");
+        lblUsuario.setText("Usuario:");
 
         lblPasswd.setText("Contraseña:");
 
@@ -65,14 +53,10 @@ public class InterfazLogin extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(57, 57, 57)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblPasswd)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblUser)
-                        .addGap(13, 13, 13)))
-                .addGap(18, 471, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblUsuario)
+                    .addComponent(lblPasswd))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -94,7 +78,7 @@ public class InterfazLogin extends javax.swing.JFrame {
                 .addComponent(lblTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblUser)
+                    .addComponent(lblUsuario)
                     .addComponent(tfUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -162,7 +146,7 @@ public class InterfazLogin extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistrarse;
     private javax.swing.JLabel lblPasswd;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JLabel lblUser;
+    private javax.swing.JLabel lblUsuario;
     private javax.swing.JTextField tfPasswd;
     private javax.swing.JTextField tfUser;
     // End of variables declaration//GEN-END:variables

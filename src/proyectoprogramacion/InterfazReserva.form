@@ -27,25 +27,25 @@
               <EmptySpace pref="105" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="btnCancel" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCancelReserva" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnNext" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnNextReserva" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="lblTitulo" min="-2" pref="371" max="-2" attributes="0"/>
+                          <Component id="lblTituloReserva" min="-2" pref="371" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblDNI" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblNumero" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblDNIReserva" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNumeroReserva" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblNoches" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="tfDNI" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="tfNumero" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="tfNoches" alignment="0" min="-2" pref="360" max="-2" attributes="0"/>
+                                  <Component id="tfDNIReserva" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tfNumeroReserva" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tftiempor" alignment="0" min="-2" pref="360" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -59,26 +59,26 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-              <Component id="lblTitulo" min="-2" pref="30" max="-2" attributes="0"/>
+              <Component id="lblTituloReserva" min="-2" pref="30" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblDNI" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfDNI" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblDNIReserva" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfDNIReserva" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblNumero" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfNumero" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNumeroReserva" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfNumeroReserva" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblNoches" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfNoches" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tftiempor" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="34" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnNext" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnCancel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnNextReserva" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCancelReserva" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
           </Group>
@@ -86,22 +86,25 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="btnCancel">
+    <Component class="javax.swing.JButton" name="btnCancelReserva">
       <Properties>
         <Property name="text" type="java.lang.String" value="Volver"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelReservaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfDNI">
+    <Component class="javax.swing.JTextField" name="tfDNIReserva">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblNumero">
+    <Component class="javax.swing.JLabel" name="lblNumeroReserva">
       <Properties>
         <Property name="text" type="java.lang.String" value="Numero:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblDNI">
+    <Component class="javax.swing.JLabel" name="lblDNIReserva">
       <Properties>
         <Property name="text" type="java.lang.String" value="DNI:"/>
       </Properties>
@@ -111,14 +114,15 @@
         <Property name="text" type="java.lang.String" value="Noches:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfNumero">
+    <Component class="javax.swing.JTextField" name="tfNumeroReserva">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfNoches">
+    <Component class="javax.swing.JTextField" name="tftiempor">
     </Component>
-    <Component class="javax.swing.JLabel" name="lblTitulo">
+    <Component class="javax.swing.JLabel" name="lblTituloReserva">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="18" style="1"/>
@@ -127,12 +131,12 @@
         <Property name="text" type="java.lang.String" value="Reserva"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnNext">
+    <Component class="javax.swing.JButton" name="btnNextReserva">
       <Properties>
         <Property name="text" type="java.lang.String" value="Finalizar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNextActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNextReservaActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

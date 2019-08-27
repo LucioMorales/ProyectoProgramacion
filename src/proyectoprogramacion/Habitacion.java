@@ -1,16 +1,23 @@
 package proyectoprogramacion;
 
 public class Habitacion {
-    protected int numero;
-    protected int piso;
-    protected int prexnoc;
-    protected int cantpers;
+    private int numero;
+    private int piso;
+    private int prexnoc;
+    private int cantpers;
 
     public Habitacion(int numero, int piso, int prexnoc, int cantpers) {
         this.numero = numero;
         this.piso = piso;
         this.prexnoc = prexnoc;
         this.cantpers = cantpers;
+    }
+    
+    public Habitacion() {
+        numero = 0;
+        piso = 0;
+        prexnoc = 0;
+        cantpers = 0;
     }
 
     public int getNumero() {

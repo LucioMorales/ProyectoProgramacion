@@ -1,19 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyectoprogramacion;
 
-/**
- *
- * @author lucio
- */
 public class InterfazRegistroH extends javax.swing.JFrame {
+    
+    private Conexion conectar;
 
-    /**
-     * Creates new form InterfazRegistroH
-     */
     public InterfazRegistroH() {
         this.setVisible(true);
         this.setResizable(false);
@@ -32,34 +22,35 @@ public class InterfazRegistroH extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         tfPiso = new javax.swing.JTextField();
-        btnNext = new javax.swing.JButton();
-        tfnumero = new javax.swing.JTextField();
-        btnCancel = new javax.swing.JButton();
+        btnNextHabitacion = new javax.swing.JButton();
+        tfNumero = new javax.swing.JTextField();
+        btnCancelHabitacion = new javax.swing.JButton();
         lblNumero = new javax.swing.JLabel();
         lblPrecxNoche = new javax.swing.JLabel();
         lblPiso = new javax.swing.JLabel();
         lblCantPers = new javax.swing.JLabel();
         tfPrecxNoche = new javax.swing.JTextField();
         tfCantPers = new javax.swing.JTextField();
-        lblTitulo = new javax.swing.JLabel();
+        lblTituloHabitacion = new javax.swing.JLabel();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(671, 310));
 
-        btnNext.setText("Continuar");
-        btnNext.addActionListener(new java.awt.event.ActionListener() {
+        btnNextHabitacion.setText("Continuar");
+        btnNextHabitacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNextActionPerformed(evt);
+                btnNextHabitacionActionPerformed(evt);
             }
         });
 
-        btnCancel.setText("Volver");
-        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+        btnCancelHabitacion.setText("Cancelar");
+        btnCancelHabitacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelActionPerformed(evt);
+                btnCancelHabitacionActionPerformed(evt);
             }
         });
 
@@ -73,9 +64,9 @@ public class InterfazRegistroH extends javax.swing.JFrame {
 
         tfPrecxNoche.setToolTipText("");
 
-        lblTitulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("Registro de Habitacion");
+        lblTituloHabitacion.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblTituloHabitacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTituloHabitacion.setText("Registro de Habitacion");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,9 +76,9 @@ public class InterfazRegistroH extends javax.swing.JFrame {
                 .addContainerGap(80, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnCancel)
+                        .addComponent(btnCancelHabitacion)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnNext)
+                        .addComponent(btnNextHabitacion)
                         .addGap(21, 21, 21))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,24 +88,24 @@ public class InterfazRegistroH extends javax.swing.JFrame {
                             .addComponent(lblCantPers))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tfnumero)
+                            .addComponent(tfNumero)
                             .addComponent(tfPiso)
                             .addComponent(tfPrecxNoche)
                             .addComponent(tfCantPers, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(57, 57, 57))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblTituloHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(138, 138, 138))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTituloHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNumero)
-                    .addComponent(tfnumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPiso)
@@ -129,25 +120,31 @@ public class InterfazRegistroH extends javax.swing.JFrame {
                     .addComponent(tfCantPers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnNext)
-                    .addComponent(btnCancel))
+                    .addComponent(btnNextHabitacion)
+                    .addComponent(btnCancelHabitacion))
                 .addGap(14, 14, 14))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
+    private void btnNextHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextHabitacionActionPerformed
         // TODO add your handling code here:
+        int textNumero = Integer.parseInt(tfNumero.getText());
+        int textPiso = Integer.parseInt(tfPiso.getText());
+        int textPrecxNoche = Integer.parseInt(tfPrecxNoche.getText());
+        int textCantPers = Integer.parseInt(tfCantPers.getText());
+        Habitacion habitacion = new Habitacion(textNumero,textPiso,textPrecxNoche,textCantPers);
         InterfazRegistroH.this.setVisible(false);
         InterfazReserva r = new InterfazReserva();
-    }//GEN-LAST:event_btnNextActionPerformed
+        System.out.println(habitacion);
+    }//GEN-LAST:event_btnNextHabitacionActionPerformed
 
-    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+    private void btnCancelHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelHabitacionActionPerformed
         // TODO add your handling code here:
         InterfazRegistroH.this.setVisible(false);
         InterfazRegistro r = new InterfazRegistro();
-    }//GEN-LAST:event_btnCancelActionPerformed
+    }//GEN-LAST:event_btnCancelHabitacionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,18 +182,18 @@ public class InterfazRegistroH extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancel;
-    private javax.swing.JButton btnNext;
+    private javax.swing.JButton btnCancelHabitacion;
+    private javax.swing.JButton btnNextHabitacion;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblCantPers;
     private javax.swing.JLabel lblNumero;
     private javax.swing.JLabel lblPiso;
     private javax.swing.JLabel lblPrecxNoche;
-    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblTituloHabitacion;
     private javax.swing.JTextField tfCantPers;
+    private javax.swing.JTextField tfNumero;
     private javax.swing.JTextField tfPiso;
     private javax.swing.JTextField tfPrecxNoche;
-    private javax.swing.JTextField tfnumero;
     // End of variables declaration//GEN-END:variables
 }

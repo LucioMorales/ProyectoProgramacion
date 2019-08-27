@@ -1,19 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyectoprogramacion;
 
-/**
- *
- * @author lucio
- */
 public class InterfazReserva extends javax.swing.JFrame {
 
-    /**
-     * Creates new form InterfazReserva
-     */
+    private Conexion conectar;
+        
     public InterfazReserva() {
         this.setVisible(true);
         this.setResizable(false);
@@ -29,41 +19,44 @@ public class InterfazReserva extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnCancel = new javax.swing.JButton();
-        tfDNI = new javax.swing.JTextField();
-        lblNumero = new javax.swing.JLabel();
-        lblDNI = new javax.swing.JLabel();
+        btnCancelReserva = new javax.swing.JButton();
+        tfDNIReserva = new javax.swing.JTextField();
+        lblNumeroReserva = new javax.swing.JLabel();
+        lblDNIReserva = new javax.swing.JLabel();
         lblNoches = new javax.swing.JLabel();
-        tfNumero = new javax.swing.JTextField();
-        tfNoches = new javax.swing.JTextField();
-        lblTitulo = new javax.swing.JLabel();
-        btnNext = new javax.swing.JButton();
+        tfNumeroReserva = new javax.swing.JTextField();
+        tftiempor = new javax.swing.JTextField();
+        lblTituloReserva = new javax.swing.JLabel();
+        btnNextReserva = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnCancel.setText("Volver");
-        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+        btnCancelReserva.setText("Volver");
+        btnCancelReserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelActionPerformed(evt);
+                btnCancelReservaActionPerformed(evt);
             }
         });
 
-        lblNumero.setText("Numero:");
+        tfDNIReserva.setEditable(false);
 
-        lblDNI.setText("DNI:");
+        lblNumeroReserva.setText("Numero:");
+
+        lblDNIReserva.setText("DNI:");
 
         lblNoches.setText("Noches:");
 
-        tfNumero.setToolTipText("");
+        tfNumeroReserva.setEditable(false);
+        tfNumeroReserva.setToolTipText("");
 
-        lblTitulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("Reserva");
+        lblTituloReserva.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblTituloReserva.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTituloReserva.setText("Reserva");
 
-        btnNext.setText("Finalizar");
-        btnNext.addActionListener(new java.awt.event.ActionListener() {
+        btnNextReserva.setText("Finalizar");
+        btnNextReserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNextActionPerformed(evt);
+                btnNextReservaActionPerformed(evt);
             }
         });
 
@@ -75,63 +68,63 @@ public class InterfazReserva extends javax.swing.JFrame {
                 .addContainerGap(105, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnCancel)
+                        .addComponent(btnCancelReserva)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnNext)
+                        .addComponent(btnNextReserva)
                         .addGap(21, 21, 21))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTituloReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblDNI)
-                                    .addComponent(lblNumero)
+                                    .addComponent(lblDNIReserva)
+                                    .addComponent(lblNumeroReserva)
                                     .addComponent(lblNoches))
                                 .addGap(30, 30, 30)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tfDNI)
-                                    .addComponent(tfNumero)
-                                    .addComponent(tfNoches, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(tfDNIReserva)
+                                    .addComponent(tfNumeroReserva)
+                                    .addComponent(tftiempor, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(116, 116, 116))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTituloReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDNI)
-                    .addComponent(tfDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblDNIReserva)
+                    .addComponent(tfDNIReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNumero)
-                    .addComponent(tfNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblNumeroReserva)
+                    .addComponent(tfNumeroReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNoches)
-                    .addComponent(tfNoches, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tftiempor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnNext)
-                    .addComponent(btnCancel))
+                    .addComponent(btnNextReserva)
+                    .addComponent(btnCancelReserva))
                 .addGap(14, 14, 14))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+    private void btnCancelReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelReservaActionPerformed
         // TODO add your handling code here:
         InterfazReserva.this.setVisible(false);
         InterfazRegistroH rh = new InterfazRegistroH();
-    }//GEN-LAST:event_btnCancelActionPerformed
+    }//GEN-LAST:event_btnCancelReservaActionPerformed
 
-    private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
+    private void btnNextReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextReservaActionPerformed
         // TODO add your handling code here:
         InterfazReserva.this.setVisible(false);
         InterfazMenu m = new InterfazMenu();
-    }//GEN-LAST:event_btnNextActionPerformed
+    }//GEN-LAST:event_btnNextReservaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,14 +162,14 @@ public class InterfazReserva extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancel;
-    private javax.swing.JButton btnNext;
-    private javax.swing.JLabel lblDNI;
+    private javax.swing.JButton btnCancelReserva;
+    private javax.swing.JButton btnNextReserva;
+    private javax.swing.JLabel lblDNIReserva;
     private javax.swing.JLabel lblNoches;
-    private javax.swing.JLabel lblNumero;
-    private javax.swing.JLabel lblTitulo;
-    private javax.swing.JTextField tfDNI;
-    private javax.swing.JTextField tfNoches;
-    private javax.swing.JTextField tfNumero;
+    private javax.swing.JLabel lblNumeroReserva;
+    private javax.swing.JLabel lblTituloReserva;
+    private javax.swing.JTextField tfDNIReserva;
+    private javax.swing.JTextField tfNumeroReserva;
+    private javax.swing.JTextField tftiempor;
     // End of variables declaration//GEN-END:variables
 }

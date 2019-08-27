@@ -1,6 +1,8 @@
 package proyectoprogramacion;
 
 public class InterfazRegistro extends javax.swing.JFrame {
+    
+    private Conexion conectar;
 
     public InterfazRegistro() {
         this.setVisible(true);
@@ -17,17 +19,17 @@ public class InterfazRegistro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        tfDNI = new javax.swing.JTextField();
-        tfNombre = new javax.swing.JTextField();
+        tfDNIRegistro = new javax.swing.JTextField();
+        tfNombreRegistro = new javax.swing.JTextField();
         lblNombre = new javax.swing.JLabel();
         lblEdad = new javax.swing.JLabel();
         lblDNI = new javax.swing.JLabel();
         lblEmail = new javax.swing.JLabel();
-        tfEdad = new javax.swing.JTextField();
-        tfEmail = new javax.swing.JTextField();
-        lblTitulo = new javax.swing.JLabel();
-        btnNext = new javax.swing.JButton();
-        btnCancel = new javax.swing.JButton();
+        tfEdadRegistro = new javax.swing.JTextField();
+        tfEmailRegistro = new javax.swing.JTextField();
+        lblTituloRegistro = new javax.swing.JLabel();
+        btnNextRegistro = new javax.swing.JButton();
+        btnCancelRegistro = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,23 +41,23 @@ public class InterfazRegistro extends javax.swing.JFrame {
 
         lblEmail.setText("Email:");
 
-        tfEdad.setToolTipText("");
+        tfEdadRegistro.setToolTipText("");
 
-        lblTitulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("Registro de Huesped");
+        lblTituloRegistro.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblTituloRegistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTituloRegistro.setText("Registro de Huesped");
 
-        btnNext.setText("Continuar");
-        btnNext.addActionListener(new java.awt.event.ActionListener() {
+        btnNextRegistro.setText("Continuar");
+        btnNextRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNextActionPerformed(evt);
+                btnNextRegistroActionPerformed(evt);
             }
         });
 
-        btnCancel.setText("Volver");
-        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+        btnCancelRegistro.setText("Volver");
+        btnCancelRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelActionPerformed(evt);
+                btnCancelRegistroActionPerformed(evt);
             }
         });
 
@@ -67,9 +69,9 @@ public class InterfazRegistro extends javax.swing.JFrame {
                 .addContainerGap(123, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnCancel)
+                        .addComponent(btnCancelRegistro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnNext)
+                        .addComponent(btnNextRegistro)
                         .addGap(21, 21, 21))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -79,57 +81,63 @@ public class InterfazRegistro extends javax.swing.JFrame {
                             .addComponent(lblEmail))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tfNombre)
-                            .addComponent(tfDNI)
-                            .addComponent(tfEdad)
-                            .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfNombreRegistro)
+                            .addComponent(tfDNIRegistro)
+                            .addComponent(tfEdadRegistro)
+                            .addComponent(tfEmailRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(116, 116, 116))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(144, 144, 144))))
+                        .addComponent(lblTituloRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(127, 127, 127))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTituloRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNombre)
-                    .addComponent(tfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfNombreRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDNI)
-                    .addComponent(tfDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfDNIRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEdad)
-                    .addComponent(tfEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfEdadRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEmail)
-                    .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfEmailRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnNext)
-                    .addComponent(btnCancel))
+                    .addComponent(btnNextRegistro)
+                    .addComponent(btnCancelRegistro))
                 .addGap(14, 14, 14))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+    private void btnCancelRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelRegistroActionPerformed
         // TODO add your handling code here:
         InterfazRegistro.this.setVisible(false);
         InterfazMenu m = new InterfazMenu();
-    }//GEN-LAST:event_btnCancelActionPerformed
+    }//GEN-LAST:event_btnCancelRegistroActionPerformed
 
-    private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
+    private void btnNextRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextRegistroActionPerformed
         // TODO add your handling code here:
+        String textNombre = tfNombreRegistro.getText();
+        int textDni = Integer.parseInt(tfDNIRegistro.getText());
+        int textEdad = Integer.parseInt(tfEdadRegistro.getText());
+        String textEmail = tfEmailRegistro.getText();
+        Huesped huesped = new Huesped(textNombre,textDni,textEdad,textEmail);
         InterfazRegistro.this.setVisible(false);
         InterfazRegistroH rh = new InterfazRegistroH();
-    }//GEN-LAST:event_btnNextActionPerformed
+        System.out.println(huesped);
+    }//GEN-LAST:event_btnNextRegistroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,16 +175,16 @@ public class InterfazRegistro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancel;
-    private javax.swing.JButton btnNext;
+    private javax.swing.JButton btnCancelRegistro;
+    private javax.swing.JButton btnNextRegistro;
     private javax.swing.JLabel lblDNI;
     private javax.swing.JLabel lblEdad;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblNombre;
-    private javax.swing.JLabel lblTitulo;
-    private javax.swing.JTextField tfDNI;
-    private javax.swing.JTextField tfEdad;
-    private javax.swing.JTextField tfEmail;
-    private javax.swing.JTextField tfNombre;
+    private javax.swing.JLabel lblTituloRegistro;
+    private javax.swing.JTextField tfDNIRegistro;
+    private javax.swing.JTextField tfEdadRegistro;
+    private javax.swing.JTextField tfEmailRegistro;
+    private javax.swing.JTextField tfNombreRegistro;
     // End of variables declaration//GEN-END:variables
 }

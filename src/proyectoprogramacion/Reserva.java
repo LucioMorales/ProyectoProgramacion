@@ -1,37 +1,37 @@
 package proyectoprogramacion;
 
 public class Reserva {
-    protected Huesped dni;
-    protected Habitacion numero;
-    protected String tiempo;
+    private int dni;
+    private int numero;
+    private int tiempo;
 
-    public Reserva(Huesped dni, Habitacion numero, String tiempo) {
+    public Reserva(int dni, int numero, int tiempo) {
         this.dni = dni;
         this.numero = numero;
         this.tiempo = tiempo;
     }
 
-    public Huesped getDni() {
+    public int getDni() {
         return dni;
     }
 
-    public void setDni(Huesped dni) {
+    public void setDni(int dni) {
         this.dni = dni;
     }
 
-    public Habitacion getNumero() {
+    public int getNumero() {
         return numero;
     }
 
-    public void setNumero(Habitacion numero) {
+    public void setNumero(int numero) {
         this.numero = numero;
     }
 
-    public String getTiempo() {
+    public int getTiempo() {
         return tiempo;
     }
 
-    public void setTiempo(String tiempo) {
+    public void setTiempo(int tiempo) {
         this.tiempo = tiempo;
     }
 
