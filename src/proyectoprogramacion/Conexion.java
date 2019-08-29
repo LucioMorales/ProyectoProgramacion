@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class Conexion {
     
-    public static void connect() {
+    public static Connection connect() {
         Connection conn = null;
         try {
             // Path db
@@ -17,7 +17,12 @@ public class Conexion {
             
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-        } finally {
+        } 
+        return conn;
+    }
+    
+    /*
+    finally {
             try {
                 if (conn != null) {
                     conn.close();
@@ -26,9 +31,5 @@ public class Conexion {
                 System.out.println(ex.getMessage());
             }
         }
-    }
-
-    public static void main(String[] args) {
-        connect();
-    }
+    */
 }

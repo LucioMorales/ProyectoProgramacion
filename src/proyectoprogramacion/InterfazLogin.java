@@ -1,9 +1,15 @@
 package proyectoprogramacion;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class InterfazLogin extends javax.swing.JFrame {
 
     public InterfazLogin() {
         this.setVisible(true);
+        this.setResizable(false);
         initComponents();
     }
 
@@ -21,7 +27,6 @@ public class InterfazLogin extends javax.swing.JFrame {
         lblUsuario = new javax.swing.JLabel();
         lblPasswd = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
-        btnRegistrarse = new javax.swing.JButton();
         tfUser = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -40,13 +45,6 @@ public class InterfazLogin extends javax.swing.JFrame {
         lblTitulo.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         lblTitulo.setText("Inicio de Sesion");
 
-        btnRegistrarse.setText("Registrarse");
-        btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarseActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -61,10 +59,7 @@ public class InterfazLogin extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(tfPasswd, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tfUser, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(28, 28, 28))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -85,9 +80,7 @@ public class InterfazLogin extends javax.swing.JFrame {
                     .addComponent(lblPasswd)
                     .addComponent(tfPasswd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAceptar)
-                    .addComponent(btnRegistrarse))
+                .addComponent(btnAceptar)
                 .addGap(19, 19, 19))
         );
 
@@ -96,15 +89,8 @@ public class InterfazLogin extends javax.swing.JFrame {
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
         // TODO add your handling code here:
-        InterfazLogin.this.setVisible(false);
-        InterfazMenu m = new InterfazMenu();
+        login(tfUser.getText(),tfPasswd.getText());
     }//GEN-LAST:event_btnAceptarActionPerformed
-
-    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
-        // TODO add your handling code here:
-        InterfazLogin.this.setVisible(false);
-        InterfazMenu m = new InterfazMenu();
-    }//GEN-LAST:event_btnRegistrarseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,10 +126,30 @@ public class InterfazLogin extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void login(String USER, String PASSWORD) {
+        String sql = "SELECT USER FROM USUARIOS WHERE USER = ? AND PASSWORD = ?";
+ 
+        try (Connection conn = Conexion.connect();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, USER);
+            pstmt.setString(2, PASSWORD);
+            
+            ResultSet rs  = pstmt.executeQuery();
+            rs.next();
+
+            if(USER.equals(rs.getString("USER"))){
+                InterfazLogin.this.setVisible(false);
+                InterfazMenu m = new InterfazMenu();
+            }
+        } catch (SQLException e) {
+            System.out.println("Usuario incorrecto");
+            System.out.println(e.getMessage());
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;
-    private javax.swing.JButton btnRegistrarse;
     private javax.swing.JLabel lblPasswd;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblUsuario;

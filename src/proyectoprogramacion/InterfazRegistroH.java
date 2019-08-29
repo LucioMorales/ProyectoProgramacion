@@ -2,12 +2,13 @@ package proyectoprogramacion;
 
 public class InterfazRegistroH extends javax.swing.JFrame {
     
-    private Conexion conectar;
+    private Conexion conectarHabitacion;
 
     public InterfazRegistroH() {
         this.setVisible(true);
         this.setResizable(false);
         initComponents();
+        conectarHabitacion.connect();
     }
 
     /**
@@ -137,7 +138,6 @@ public class InterfazRegistroH extends javax.swing.JFrame {
         Habitacion habitacion = new Habitacion(textNumero,textPiso,textPrecxNoche,textCantPers);
         InterfazRegistroH.this.setVisible(false);
         InterfazReserva r = new InterfazReserva();
-        System.out.println(habitacion);
     }//GEN-LAST:event_btnNextHabitacionActionPerformed
 
     private void btnCancelHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelHabitacionActionPerformed

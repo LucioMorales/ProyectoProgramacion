@@ -2,12 +2,13 @@ package proyectoprogramacion;
 
 public class InterfazRegistro extends javax.swing.JFrame {
     
-    private Conexion conectar;
+    private Conexion conectarHuesped;
 
     public InterfazRegistro() {
         this.setVisible(true);
         this.setResizable(false);
         initComponents();
+        conectarHuesped.connect();
     }
 
     /**
@@ -136,7 +137,6 @@ public class InterfazRegistro extends javax.swing.JFrame {
         Huesped huesped = new Huesped(textNombre,textDni,textEdad,textEmail);
         InterfazRegistro.this.setVisible(false);
         InterfazRegistroH rh = new InterfazRegistroH();
-        System.out.println(huesped);
     }//GEN-LAST:event_btnNextRegistroActionPerformed
 
     /**

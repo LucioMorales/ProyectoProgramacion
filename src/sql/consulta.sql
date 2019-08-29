@@ -10,3 +10,12 @@ WHERE
 	R.NUMERO = A.NUMERO AND
 	R.DNI = H.DNI
 ;
+
+SELECT 
+        USER
+FROM	
+        USUARIO
+WHERE
+        USER = 'Lucio' AND 
+        PASSWORD = 'ola'
+;
