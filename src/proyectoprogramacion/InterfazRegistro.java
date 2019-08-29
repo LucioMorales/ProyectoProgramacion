@@ -1,5 +1,9 @@
 package proyectoprogramacion;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 public class InterfazRegistro extends javax.swing.JFrame {
     
     private Conexion conectarHuesped;
@@ -134,7 +138,7 @@ public class InterfazRegistro extends javax.swing.JFrame {
         int textDni = Integer.parseInt(tfDNIRegistro.getText());
         int textEdad = Integer.parseInt(tfEdadRegistro.getText());
         String textEmail = tfEmailRegistro.getText();
-        Huesped huesped = new Huesped(textNombre,textDni,textEdad,textEmail);
+        insert(textNombre,textDni,textEdad,textEmail);
         InterfazRegistro.this.setVisible(false);
         InterfazRegistroH rh = new InterfazRegistroH();
     }//GEN-LAST:event_btnNextRegistroActionPerformed
@@ -172,6 +176,22 @@ public class InterfazRegistro extends javax.swing.JFrame {
                 new InterfazRegistro().setVisible(true);
             }
         });
+    }
+    
+    public void insert(String NOMBRE,int DNI,int EDAD,String EMAIL) {
+        String sql = "INSERT INTO HUESPED(NOMBRE,DNI,EDAD,EMAIL) VALUES(?,?,?,?)";
+ 
+        try (Connection conn = Conexion.connect();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, NOMBRE);
+            pstmt.setInt(2, DNI);
+            pstmt.setInt(3, EDAD);
+            pstmt.setString(4, EMAIL);
+            pstmt.executeUpdate();
+            System.out.println(NOMBRE + " - " + DNI + " - " + EDAD + " - " + EMAIL);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

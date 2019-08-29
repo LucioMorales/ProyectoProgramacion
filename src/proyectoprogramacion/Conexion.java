@@ -13,7 +13,7 @@ public class Conexion {
             String url = "jdbc:sqlite:/home/lucio/Documents/Programacion/Java/ProyectoProgramacion/ProyectoProgramacion/DB/Proyecto.db";
             // Create connection to db
             conn = DriverManager.getConnection(url);
-            System.out.println("Conexion exitosa");
+            //System.out.println("Conexion exitosa");
             
         } catch (SQLException e) {
             System.out.println(e.getMessage());
