@@ -69,8 +69,6 @@ public class InterfazReserva extends javax.swing.JFrame {
 
         lblCantPers.setText("Cantidad de Personas :");
 
-        cbNroHabitacion.setModel(fillCombo(1));
-
         cbPersonas.setMaximumRowCount(4);
         cbPersonas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
         cbPersonas.addActionListener(new java.awt.event.ActionListener() {
@@ -153,12 +151,17 @@ public class InterfazReserva extends javax.swing.JFrame {
     private void btnNextReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextReservaActionPerformed
         // TODO add your handling code here:
         int textTiempo = Integer.parseInt(tftiempor.getText());
+        int textDniReserva = Integer.parseInt(tfDNIReserva.getText());
+        int tfNroReserva = Integer.parseInt((String) cbNroHabitacion.getSelectedItem());
+        insert(textDniReserva,tfNroReserva,textTiempo);
         InterfazReserva.this.setVisible(false);
         InterfazMenu menu3 = new InterfazMenu();
     }//GEN-LAST:event_btnNextReservaActionPerformed
 
     private void cbPersonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPersonasActionPerformed
         // TODO add your handling code here:
+        int item = Integer.parseInt((String) cbPersonas.getSelectedItem());
+        cbNroHabitacion.setModel(fillCombo(item));
     }//GEN-LAST:event_cbPersonasActionPerformed
 
     /**
@@ -211,12 +214,10 @@ public class InterfazReserva extends javax.swing.JFrame {
     }
     
     public DefaultComboBoxModel fillCombo(int CANTPERS){
-        System.out.println(cbPersonas.getSelectedItem());
         String[] nrohabitacion = null;
         String sql = "SELECT A.NUMERO FROM HABITACION A " +
                      "WHERE NOT EXISTS (" +
                      "SELECT NUMERO FROM RESERVA R WHERE A.NUMERO = R.NUMERO) AND A.CANTPERS =  ? ";
- 
         try (Connection conn = Conexion.connect();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, CANTPERS);
