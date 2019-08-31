@@ -143,8 +143,8 @@ public class InterfazLogin extends javax.swing.JFrame {
                 InterfazMenu m = new InterfazMenu();
             }
         } catch (SQLException e) {
-            System.out.println("Usuario incorrecto");
-            System.out.println(e.getMessage());
+            System.out.println("Usuario o contraseña incorrecta");
+            //System.out.println(e.getMessage());
         }
     }
 

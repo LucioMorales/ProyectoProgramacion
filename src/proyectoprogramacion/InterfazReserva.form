@@ -24,7 +24,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace pref="105" max="32767" attributes="0"/>
+              <EmptySpace pref="77" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="btnCancelReserva" min="-2" max="-2" attributes="0"/>
@@ -33,26 +33,33 @@
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
+                      <Component id="lblTituloReserva" min="-2" pref="371" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="lblTituloReserva" alignment="1" min="-2" pref="371" max="-2" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblNumeroReserva" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblDNIReserva" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblDNIReserva" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNoches" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="tfDNIReserva" min="-2" pref="360" max="-2" attributes="0"/>
-                                  <Component id="tfNumeroReserva" min="-2" pref="360" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="lblNoches" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="tftiempor" min="-2" pref="360" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="lblCantPers" max="32767" attributes="0"/>
+                                  <Component id="lblNumeroReserva" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="tfDNIReserva" pref="360" max="32767" attributes="0"/>
+                          <Component id="tftiempor" pref="360" max="32767" attributes="0"/>
+                          <Component id="cbNroHabitacion" alignment="0" max="32767" attributes="0"/>
+                          <Component id="cbPersonas" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -63,22 +70,27 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               <Component id="lblTituloReserva" min="-2" pref="30" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblNumeroReserva" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfNumeroReserva" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblCantPers" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbPersonas" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblDNIReserva" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfDNIReserva" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNumeroReserva" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbNroHabitacion" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblDNIReserva" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfDNIReserva" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="tftiempor" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblNoches" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="39" max="32767" attributes="0"/>
+              <EmptySpace pref="33" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnNextReserva" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnCancelReserva" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -98,13 +110,10 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="tfDNIReserva">
-      <Properties>
-        <Property name="editable" type="boolean" value="false"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblNumeroReserva">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Numero:"/>
+        <Property name="text" type="java.lang.String" value="Numero de Habitacion:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblDNIReserva">
@@ -114,13 +123,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblNoches">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Noches:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="tfNumeroReserva">
-      <Properties>
-        <Property name="editable" type="boolean" value="false"/>
-        <Property name="toolTipText" type="java.lang.String" value=""/>
+        <Property name="text" type="java.lang.String" value="Cantidad de Noches:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tftiempor">
@@ -141,6 +144,40 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNextReservaActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblCantPers">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cantidad de Personas :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cbNroHabitacion">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="fillCombo(1)" type="code"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cbPersonas">
+      <Properties>
+        <Property name="maximumRowCount" type="int" value="4"/>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="1"/>
+            <StringItem index="1" value="2"/>
+            <StringItem index="2" value="3"/>
+            <StringItem index="3" value="4"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbPersonasActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

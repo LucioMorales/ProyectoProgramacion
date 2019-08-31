@@ -27,9 +27,10 @@ public class InterfazMenu extends javax.swing.JFrame {
         lblaa = new javax.swing.JLabel();
         lblweb = new javax.swing.JLabel();
         lblreserv = new javax.swing.JLabel();
-        btnReservarMenu = new javax.swing.JButton();
+        btnHuespedMenu = new javax.swing.JButton();
         btnHTMLMenu = new javax.swing.JButton();
         btnCancelMenu = new javax.swing.JButton();
+        btnReservarHabitacion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,10 +43,10 @@ public class InterfazMenu extends javax.swing.JFrame {
 
         lblreserv.setText("Realize una reserva ahora aqui:");
 
-        btnReservarMenu.setText("Reservar");
-        btnReservarMenu.addActionListener(new java.awt.event.ActionListener() {
+        btnHuespedMenu.setText("Huesped");
+        btnHuespedMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnReservarMenuActionPerformed(evt);
+                btnHuespedMenuActionPerformed(evt);
             }
         });
 
@@ -63,25 +64,37 @@ public class InterfazMenu extends javax.swing.JFrame {
             }
         });
 
+        btnReservarHabitacion.setText("Habitacion");
+        btnReservarHabitacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReservarHabitacionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblweb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnHTMLMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCancelMenu))
+                        .addComponent(lblreserv)
+                        .addGap(26, 26, 26))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblweb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnHTMLMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(btnReservarMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblreserv))))
-                .addGap(26, 26, 26))
+                        .addComponent(btnReservarHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addComponent(btnCancelMenu))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnHuespedMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(15, 15, 15))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,26 +115,28 @@ public class InterfazMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblreserv)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnReservarMenu))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(lblweb)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnHTMLMenu)))
-                .addGap(18, 18, 18)
-                .addComponent(btnCancelMenu)
+                        .addComponent(btnHTMLMenu)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCancelMenu))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblreserv)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnReservarHabitacion)
+                            .addComponent(btnHuespedMenu))))
                 .addGap(25, 25, 25))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnReservarMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservarMenuActionPerformed
+    private void btnHuespedMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuespedMenuActionPerformed
         // TODO add your handling code here:
         InterfazMenu.this.setVisible(false);
         InterfazRegistro r = new InterfazRegistro();
-    }//GEN-LAST:event_btnReservarMenuActionPerformed
+    }//GEN-LAST:event_btnHuespedMenuActionPerformed
 
     private void btnHTMLMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHTMLMenuActionPerformed
         // TODO add your handling code here:
@@ -139,6 +154,12 @@ public class InterfazMenu extends javax.swing.JFrame {
         InterfazMenu.this.setVisible(false);
         InterfazLogin l = new InterfazLogin();
     }//GEN-LAST:event_btnCancelMenuActionPerformed
+
+    private void btnReservarHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservarHabitacionActionPerformed
+        // TODO add your handling code here:
+        InterfazMenu.this.setVisible(false);
+        InterfazReserva r = new InterfazReserva();
+    }//GEN-LAST:event_btnReservarHabitacionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,7 +199,8 @@ public class InterfazMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelMenu;
     private javax.swing.JButton btnHTMLMenu;
-    private javax.swing.JButton btnReservarMenu;
+    private javax.swing.JButton btnHuespedMenu;
+    private javax.swing.JButton btnReservarHabitacion;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblaa;
     private javax.swing.JLabel lblreserv;

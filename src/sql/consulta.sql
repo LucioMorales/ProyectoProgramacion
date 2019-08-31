@@ -1,3 +1,33 @@
+.headers on
+
+
+SELECT 
+	A.NUMERO
+FROM	
+	HABITACION A
+WHERE
+	NOT EXISTS(
+            SELECT NUMERO 
+            FROM RESERVA R 
+            WHERE A.NUMERO = R.NUMERO) AND 
+        A.CANTPERS = 2  
+                                        
+
+;
+
+.quit
+
+
+SELECT 
+        *
+FROM 
+        HABITACION
+WHERE
+        CANTPERS = 2
+;
+
+.quit
+
 SELECT 
 	H.NOMBRE,
 	A.NUMERO,

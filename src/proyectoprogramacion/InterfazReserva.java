@@ -1,12 +1,21 @@
 package proyectoprogramacion;
 
-public class InterfazReserva extends javax.swing.JFrame {
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.DefaultComboBoxModel;
 
+public class InterfazReserva extends javax.swing.JFrame {
     private Conexion conectarReserva;
         
     public InterfazReserva() {
         this.setVisible(true);
         this.setResizable(false);
+        // Cargar habitaciones disponibles
+        
         initComponents();
         conectarReserva.connect();
     }
@@ -25,10 +34,12 @@ public class InterfazReserva extends javax.swing.JFrame {
         lblNumeroReserva = new javax.swing.JLabel();
         lblDNIReserva = new javax.swing.JLabel();
         lblNoches = new javax.swing.JLabel();
-        tfNumeroReserva = new javax.swing.JTextField();
         tftiempor = new javax.swing.JTextField();
         lblTituloReserva = new javax.swing.JLabel();
         btnNextReserva = new javax.swing.JButton();
+        lblCantPers = new javax.swing.JLabel();
+        cbNroHabitacion = new javax.swing.JComboBox<>();
+        cbPersonas = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,16 +50,11 @@ public class InterfazReserva extends javax.swing.JFrame {
             }
         });
 
-        tfDNIReserva.setEditable(false);
-
-        lblNumeroReserva.setText("Numero:");
+        lblNumeroReserva.setText("Numero de Habitacion:");
 
         lblDNIReserva.setText("DNI:");
 
-        lblNoches.setText("Noches:");
-
-        tfNumeroReserva.setEditable(false);
-        tfNumeroReserva.setToolTipText("");
+        lblNoches.setText("Cantidad de Noches:");
 
         lblTituloReserva.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblTituloReserva.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -61,12 +67,24 @@ public class InterfazReserva extends javax.swing.JFrame {
             }
         });
 
+        lblCantPers.setText("Cantidad de Personas :");
+
+        cbNroHabitacion.setModel(fillCombo(1));
+
+        cbPersonas.setMaximumRowCount(4);
+        cbPersonas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        cbPersonas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbPersonasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(105, Short.MAX_VALUE)
+                .addContainerGap(77, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnCancelReserva)
@@ -74,40 +92,49 @@ public class InterfazReserva extends javax.swing.JFrame {
                         .addComponent(btnNextReserva)
                         .addGap(21, 21, 21))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblTituloReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(116, 116, 116))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblTituloReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblNumeroReserva)
-                                    .addComponent(lblDNIReserva))
-                                .addGap(30, 30, 30)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(tfDNIReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tfNumeroReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(lblDNIReserva)
+                                    .addComponent(lblNoches))
+                                .addGap(25, 25, 25))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblNoches)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tftiempor, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(116, 116, 116))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(lblCantPers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblNumeroReserva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tfDNIReserva, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                            .addComponent(tftiempor, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                            .addComponent(cbNroHabitacion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbPersonas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(62, 62, 62))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(lblTituloReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNumeroReserva)
-                    .addComponent(tfNumeroReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblCantPers)
+                    .addComponent(cbPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDNIReserva)
+                    .addComponent(lblNumeroReserva)
+                    .addComponent(cbNroHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblDNIReserva, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(tfDNIReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tftiempor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNoches))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNextReserva)
                     .addComponent(btnCancelReserva))
@@ -120,14 +147,19 @@ public class InterfazReserva extends javax.swing.JFrame {
     private void btnCancelReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelReservaActionPerformed
         // TODO add your handling code here:
         InterfazReserva.this.setVisible(false);
-        InterfazRegistroH rh = new InterfazRegistroH();
+        InterfazMenu menu2 = new InterfazMenu();
     }//GEN-LAST:event_btnCancelReservaActionPerformed
 
     private void btnNextReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextReservaActionPerformed
         // TODO add your handling code here:
+        int textTiempo = Integer.parseInt(tftiempor.getText());
         InterfazReserva.this.setVisible(false);
-        InterfazMenu m = new InterfazMenu();
+        InterfazMenu menu3 = new InterfazMenu();
     }//GEN-LAST:event_btnNextReservaActionPerformed
+
+    private void cbPersonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPersonasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbPersonasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,16 +195,60 @@ public class InterfazReserva extends javax.swing.JFrame {
             }
         });
     }
-
+    
+    public void insert(int DNI,int NUMERO,int TIEMPO) {
+        String sql = "INSERT INTO RESERVA(DNI,NUMERO,TIEMPO) VALUES(?,?,?)";
+ 
+        try (Connection conn = Conexion.connect();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, DNI);
+            pstmt.setInt(2, NUMERO);
+            pstmt.setInt(3, TIEMPO);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public DefaultComboBoxModel fillCombo(int CANTPERS){
+        System.out.println(cbPersonas.getSelectedItem());
+        String[] nrohabitacion = null;
+        String sql = "SELECT A.NUMERO FROM HABITACION A " +
+                     "WHERE NOT EXISTS (" +
+                     "SELECT NUMERO FROM RESERVA R WHERE A.NUMERO = R.NUMERO) AND A.CANTPERS =  ? ";
+ 
+        try (Connection conn = Conexion.connect();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, CANTPERS);
+            
+            ResultSet rs  = pstmt.executeQuery();
+            List <String> habdisponibles = new ArrayList<>();
+            
+            while (rs.next()) {
+                habdisponibles.add(rs.getString("NUMERO"));
+            }
+            nrohabitacion = new String[habdisponibles.size()];
+            nrohabitacion = habdisponibles.toArray(nrohabitacion);
+            
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        
+        return new javax.swing.DefaultComboBoxModel<>(nrohabitacion);
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelReserva;
     private javax.swing.JButton btnNextReserva;
+    private javax.swing.JComboBox<String> cbNroHabitacion;
+    private javax.swing.JComboBox<String> cbPersonas;
+    private javax.swing.JLabel lblCantPers;
     private javax.swing.JLabel lblDNIReserva;
     private javax.swing.JLabel lblNoches;
     private javax.swing.JLabel lblNumeroReserva;
     private javax.swing.JLabel lblTituloReserva;
     private javax.swing.JTextField tfDNIReserva;
-    private javax.swing.JTextField tfNumeroReserva;
     private javax.swing.JTextField tftiempor;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,5 +1,9 @@
 package proyectoprogramacion;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 public class InterfazRegistroH extends javax.swing.JFrame {
     
     private Conexion conectarHabitacion;
@@ -131,19 +135,19 @@ public class InterfazRegistroH extends javax.swing.JFrame {
 
     private void btnNextHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextHabitacionActionPerformed
         // TODO add your handling code here:
-        int textNumero = Integer.parseInt(tfNumero.getText());
+        /*int textNumero = Integer.parseInt(tfNumero.getText());
         int textPiso = Integer.parseInt(tfPiso.getText());
         int textPrecxNoche = Integer.parseInt(tfPrecxNoche.getText());
         int textCantPers = Integer.parseInt(tfCantPers.getText());
-        Habitacion habitacion = new Habitacion(textNumero,textPiso,textPrecxNoche,textCantPers);
+        insert(textNumero,textPiso,textPrecxNoche,textCantPers);
         InterfazRegistroH.this.setVisible(false);
-        InterfazReserva r = new InterfazReserva();
+        InterfazReserva r = new InterfazReserva();*/
     }//GEN-LAST:event_btnNextHabitacionActionPerformed
 
     private void btnCancelHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelHabitacionActionPerformed
         // TODO add your handling code here:
-        InterfazRegistroH.this.setVisible(false);
-        InterfazRegistro r = new InterfazRegistro();
+        /*InterfazRegistroH.this.setVisible(false);
+        InterfazRegistro r = new InterfazRegistro();*/
     }//GEN-LAST:event_btnCancelHabitacionActionPerformed
 
     /**
@@ -180,6 +184,23 @@ public class InterfazRegistroH extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void insert(int NUMERO,int PISO,int PREXNOC,int CANTPERS) {
+        String sql = "INSERT INTO HABITACION(NUMERO,PISO,PREXNOC,CANTPERS) VALUES(?,?,?,?)";
+ 
+        try (Connection conn = Conexion.connect();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, NUMERO);
+            pstmt.setInt(2, PISO);
+            pstmt.setInt(3, PREXNOC);
+            pstmt.setInt(4, CANTPERS);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelHabitacion;

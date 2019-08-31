@@ -2,6 +2,7 @@ package proyectoprogramacion;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class InterfazRegistro extends javax.swing.JFrame {
@@ -52,7 +53,7 @@ public class InterfazRegistro extends javax.swing.JFrame {
         lblTituloRegistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTituloRegistro.setText("Registro de Huesped");
 
-        btnNextRegistro.setText("Continuar");
+        btnNextRegistro.setText("Finalizar");
         btnNextRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNextRegistroActionPerformed(evt);
@@ -140,7 +141,7 @@ public class InterfazRegistro extends javax.swing.JFrame {
         String textEmail = tfEmailRegistro.getText();
         insert(textNombre,textDni,textEdad,textEmail);
         InterfazRegistro.this.setVisible(false);
-        InterfazRegistroH rh = new InterfazRegistroH();
+        InterfazMenu menu1 = new InterfazMenu();
     }//GEN-LAST:event_btnNextRegistroActionPerformed
 
     /**
@@ -188,12 +189,11 @@ public class InterfazRegistro extends javax.swing.JFrame {
             pstmt.setInt(3, EDAD);
             pstmt.setString(4, EMAIL);
             pstmt.executeUpdate();
-            System.out.println(NOMBRE + " - " + DNI + " - " + EDAD + " - " + EMAIL);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelRegistro;
     private javax.swing.JButton btnNextRegistro;
