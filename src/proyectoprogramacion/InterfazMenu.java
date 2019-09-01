@@ -141,7 +141,7 @@ public class InterfazMenu extends javax.swing.JFrame {
     private void btnHTMLMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHTMLMenuActionPerformed
         // TODO add your handling code here:
         try {
-            File htmlFile = new File("C:\\Users\\Maximo\\Desktop\\Programacion\\5C\\informatica aplicada\\html\\TP8\\cv.html");
+            File htmlFile = new File("C:\\Users\\Maximo\\Desktop\\Programacion\\5C\\proyecto\\ProyectoProgramacion\\src\\html\\Pagina.html");
             Desktop.getDesktop().browse(htmlFile.toURI());
         } catch (IOException ex) {
             Logger.getLogger(InterfazMenu.class.getName()).log(Level.SEVERE, null, ex);
