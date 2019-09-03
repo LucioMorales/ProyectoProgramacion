@@ -20,16 +20,4 @@ public class Conexion {
         } 
         return conn;
     }
-    
-    /*
-    finally {
-            try {
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (SQLException ex) {
-                System.out.println(ex.getMessage());
-            }
-        }
-    */
 }

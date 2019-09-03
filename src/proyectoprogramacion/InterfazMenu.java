@@ -3,15 +3,18 @@ package proyectoprogramacion;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class InterfazMenu extends javax.swing.JFrame {
+    
+    private Conexion conectarMenu;
 
     public InterfazMenu() {
         this.setVisible(true);
-        initComponents();
         this.setResizable(false);
+        initComponents();
     }
 
     /**
@@ -34,6 +37,11 @@ public class InterfazMenu extends javax.swing.JFrame {
         btnVerReserva = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         lblTitulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblTitulo.setText("Menú");
@@ -177,6 +185,10 @@ public class InterfazMenu extends javax.swing.JFrame {
         InterfazMenu.this.setVisible(false);
         InterfazReporte reporte = new InterfazReporte();
     }//GEN-LAST:event_btnVerReservaActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments
