@@ -14,8 +14,6 @@ public class InterfazReserva extends javax.swing.JFrame {
     public InterfazReserva() {
         this.setVisible(true);
         this.setResizable(false);
-        // Cargar habitaciones disponibles
-        
         initComponents();
         conectarReserva.connect();
     }
