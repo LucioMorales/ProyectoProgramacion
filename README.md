@@ -2,3 +2,4 @@
 Morales, Lucio - 
 Urquiza, Maximo
 
+Diagrama: https://www.draw.io/#G1qzIbHzlSV0rcozPWQE9mXQSpn6fu4P5G
